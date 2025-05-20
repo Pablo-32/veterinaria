@@ -23,14 +23,15 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
     path('', include('PatitasFelices.urls')),
-    path('login/', views.login_view, name='login'),
+    #path('login/', views.login_view, name='login'),
     path('registro/', views.registro, name='registro'),
     path('servicios/', views.servicios, name='servicios'),
     path('nosotros/', views.nosotros, name='nosotros'),
     path('contacto/', views.contacto, name='contacto'),
     path('tienda/', views.tienda_view, name='tienda'),
+    path('turno/', views.solicitar_turno, name='solicitar_turno'),
 ]
 
 if settings.DEBUG:

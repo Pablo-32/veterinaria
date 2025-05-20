@@ -4,25 +4,26 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.shortcuts import render
 from .models import Producto
 from .forms import RegistroUsuarioForm
 from django.contrib import messages
 
+
 def home(request):
     return render(request, 'home.html')
 
-def login_view(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user:
-            login(request, user)
-            return redirect('home')
-        else:
-            return render(request, 'login.html', {'error': 'Credenciales inválidas'})
-    return render(request, 'login.html')
+#def login_view(request):
+ #   if request.method == 'POST':
+ #       username = request.POST['username']
+     #  password = request.POST['password']
+      #  user = authenticate(request, username=username, password=password)
+       # if user:
+        #    login(request, user)
+         #   return redirect('home')
+        #else:
+         #   return render(request, 'login.html', {'error': 'Credenciales inválidas'})
+    #return render(request, 'login.html')
+
 
 def registro(request):
     if request.method == 'POST':
@@ -49,8 +50,6 @@ def tienda_view(request):
 def tienda(request):
     productos = Producto.objects.all()
     return render(request, 'tienda.html', {'productos': productos})
-
-
 
 
 
@@ -96,3 +95,23 @@ def tienda(request):
     else:
         productos = Producto.objects.all()
     return render(request, 'tienda.html', {'productos': productos})
+
+from .forms import FormTurnos
+
+def solicitar_turno(request):
+    mensaje_enviado = False
+
+    if request.method == 'POST':
+        formulario = FormTurnos(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            mensaje_enviado = True
+            formulario = FormTurnos()  # Limpia los campos luego del envío
+    else:
+        formulario = FormTurnos()
+    
+    return render(request, 'solicitar_turno.html', {
+        'formulario': formulario,
+        'mensaje_enviado': mensaje_enviado
+    })
+

@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playball&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <title>Patitas Felices - Home</title>
 </head>
 <body>
         <nav>
-            <div class="logo"><img src="../static/img/patita.png" alt="">Patitas Felices</div>
+            <div class="logo"><img src="../static/img/patita.png" alt=""><span class="highlight-grey">Patitas <span class="highlight-pink">Felices</span></span>
+            </div>
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
             <ul id="menu">
                 <li><a href="#">Inicio</a></li>
@@ -22,15 +26,18 @@
     
         <div class="grid-container">
             <div class="item1">
-                <h1>Bienvenido a Patitas Felices</h1>
-                <p>Tu lugar de confianza para el cuidado de mascotas.</p>
+               <h1><span class="highlight-grey">Bienvenido</span><span class="highlight-orange"> a Patitas</span> <span class="highlight-grey">Felices</span></h1>
+                <p>Tu lugar de confianza para el cuidado de mascotas</p>
             </div>
+        
             <div class="item2">
+                <div class="imagen-fondo">
                 <img src="../static/img/4.png" alt="">
-                
+                </div>
             </div>
+        
             <div class="item3">
-                <button onclick="window.location.href='{% url 'login' %}'">Pedir turno</button>
+                <button onclick="window.location.href='{% url 'solicitar_turno' %}'">Pedir turno</button>
                 
             </div>  
         </div>
