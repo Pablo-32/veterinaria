@@ -48,12 +48,12 @@ class FormTurnos(forms.ModelForm):
             ('peluqueria', 'Peluquería'),
         ])
 
-        # Todos los campos requeridos
+        # Todos los campos obligatorios
         for field in self.fields.values():
             field.required = True
 
     def clean_fecha(self):
         fecha = self.cleaned_data['fecha']
-        if fecha.weekday() in (5, 6):  # 5 = sábado, 6 = domingo
+        if fecha.weekday() in (5, 6): #Sabado y domingo no
             raise forms.ValidationError("No se dan turnos los fines de semana.")
         return fecha
