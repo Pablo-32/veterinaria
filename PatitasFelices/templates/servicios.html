@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Servicios</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    
+    <nav>
+        <div class="logoLogins">
+            <img src="{% static 'img/patita.png' %}" alt="Logo" style="height: 40px; vertical-align: middle;">
+            <a href="{% url 'home' %}" style="text-decoration: none; color: #FFFFFF;">Patitas Felices</a>
+        </div>
+        <ul>
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'servicios' %}">Servicios</a></li>
+            <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+            <li><a href="{% url 'contacto' %}">Contacto</a></li>
+            <li><a href="{% url 'tienda' %}">Tienda</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="container">
+        <div class="card1">
+            <div class="nosotros1">
+                <div class="content1">
+                    <h2>Consultorio</h2>
+                    <img src="{% static 'img/9.png' %}" alt="Consultorio">
+                </div>
+            </div>
+        </div>
+        <div class="card1">
+            <div class="nosotros1">
+                <div class="content1">
+                    <h2>Vacunación</h2>
+                    <img src="{% static 'img/8.png' %}" alt="Vacunación">
+                </div>
+            </div>
+        </div>
+        <div class="card1">
+            <div class="nosotros1">
+                <div class="content1">
+                    <h2>Peluquería</h2>
+                    <img src="{% static 'img/7.png' %}" alt="Peluquería">
+                </div>
+            </div>
+        </div>
+        <div class="card1">
+            <div class="nosotros1">
+                <div class="content1">
+                    <h2>Cirugía</h2>
+                    <img src="{% static 'img/6.png' %}" alt="Cirugía">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

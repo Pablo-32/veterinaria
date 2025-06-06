@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    
+    <div class="logoLogin"><img src="../static/img/patita.png" alt=""><a href="{% url 'home' %}" style="text-decoration: none; color: #FFFFFF;">Patitas Felices</a></div>
+    <div class="login-container">
+        <h2>Iniciar sesión</h2>
+            <div class="formulario">
+                <form method="post">
+                   {% csrf_token %}
+                   <input type="text" name="username" placeholder="Usuario"><br>
+                   <input type="password" name="password" placeholder="Contraseña"><br><br>
+                   <button type="submit">Inicia sesion</button>
+                </form>
+            </div>
+           <p>¿No tenes cuenta? <a href="{% url 'registro' %}">Registrate aca</a></p>
+    </div>
+</body>
+</html>
