@@ -13,7 +13,7 @@
     background-color: #f59fd4;
  }
  body, html {
-     height: 100%;
+     height: 96%;
      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
  }
 
@@ -127,8 +127,9 @@ nav {
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
-    margin-right: 8px;
+    margin-right: 11px;
     width: 28px;
+
 }
 
 .card1{
@@ -221,7 +222,7 @@ nav {
     border: none;
     border-radius: 12px;
     padding: 8px;
-    background-color: black;
+    background-color: darkorchid;
     color: #ffffff;
     cursor: pointer;
 }
@@ -292,13 +293,19 @@ nav {
     height: 97vh;
 }
 
+footer{
+    width: 100%;
+    background-color: hotpink;
+    height: 200px;
+    margin-top: 70px;
+}
 
 @media (max-width: 768px) {
      nav ul {
          flex-direction: column;
-         background-color: rgba(0, 0, 0, 0.8);
+         background-color: rgba(0, 0, 0, 0.9);
          position: absolute;
-         top: 64px;
+         top: 52px;
          right: 0;
          width: 200px;
          display: none;
@@ -307,11 +314,12 @@ nav {
      }
      nav ul.show {
          display: flex;
+         z-index: 1000;
      }
      .menu-toggle {
          display: block;
          color: white;
-         font-size: 1.5rem;
+         font-size: 2rem;
          cursor: pointer;
      }
      .item1{
