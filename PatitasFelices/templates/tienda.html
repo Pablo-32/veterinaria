@@ -17,8 +17,9 @@
             <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
             <p>{{ producto.descripcion }}</p>
             <p>Precio: ${{ producto.precio }}</p>
+            <a href="{% url 'agregar_al_carrito' producto.id %}">
             <button>Comprar</button>
-        </div>
+            </a></div>
     </div>
     {% endfor %}
 

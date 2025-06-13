@@ -1,13 +1,13 @@
-
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.shortcuts import render
+from django.contrib import messages
 from .models import Producto
 from .forms import RegistroUsuarioForm
-from django.contrib import messages
+
 
 def home(request):
     return render(request, 'home.html')
@@ -96,3 +96,34 @@ def tienda(request):
     else:
         productos = Producto.objects.all()
     return render(request, 'tienda.html', {'productos': productos})
+
+def agregar_al_carrito(request, producto_id):
+    carrito = request.session.get('carrito', [])
+    carrito.append(producto_id)
+    request.session['carrito'] = carrito
+    return redirect('carrito')
+
+
+def carrito(request):
+    carrito = request.session.get('carrito', [])  # o como estés almacenando los productos
+    productos = Producto.objects.filter(id__in=carrito)
+
+    subtotal = sum(p.precio for p in productos)
+    envio = 20  
+    total = subtotal + envio
+
+    return render(request, 'carrito.html', {
+        'productos': productos,
+        'subtotal': subtotal,
+        'envio': envio,
+        'total': total
+    })
+
+
+
+def eliminar_del_carrito(request, producto_id):
+    carrito = request.session.get('carrito', [])
+    if producto_id in carrito:
+        carrito.remove(producto_id)
+        request.session['carrito'] = carrito
+    return redirect('carrito')

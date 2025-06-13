@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<main class="contenido_carrito">
+{% block content %}
+<div class="carrito-wrapper">
+    <!-- Columna izquierda: productos -->
+    <div class="productos-carrito">
+        <h2>Carrito de compras</h2>
+        <p>Tienes {{ productos|length }} productos en tu carrito</p>
+
+        {% for producto in productos %}
+        <div class="producto-item">
+            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+            <div>
+                <h4>{{ producto.nombre }}</h4>
+                <p>{{ producto.descripcion }}</p>
+                <p class="precio">${{ producto.precio }}</p>
+                <form method="post" action="{% url 'eliminar_del_carrito' producto.id %}">
+                    {% csrf_token %}
+                    <button type="submit">🗑️</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Columna derecha: formulario de pago -->
+    <div class="pago-carrito">
+        <h3>Detalles de tarjeta</h3>
+        <form>
+            <label>Tipo de tarjeta</label>
+            <div class="iconos-tarjeta">
+                <img src="{% static 'img/visa.png' %}" alt="Visa">
+                <img src="{% static 'img/master.png' %}" alt="MasterCard">
+                <img src="{% static 'img/amex.png' %}" alt="Amex">
+                <img src="{% static 'img/pay.png' %}" alt="PayPal">
+            </div>
+                <input type="text" placeholder="Nombre en la tarjeta">
+                <input type="text" placeholder="Número de tarjeta">
+            <div class="fila">
+                <input type="text" placeholder="MM/AA">
+                <input type="text" placeholder="CVV">
+            </div>
+
+            <hr>
+            <p><strong>Subtotal:</strong> ${{ subtotal }}</p>
+            <p>Envío: ${{ envio }}</p>
+            <strong>Total: ${{ total }}</strong>
+            <hr>
+            <button type="submit">Finalizar compra</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+</main>
+
