@@ -316,7 +316,7 @@ nav {
 }
 
 .pago-carrito {
-    flex: 2;
+    flex: 1;
     background: #002aff;
     color: white;
 }
@@ -330,11 +330,22 @@ nav {
     border-bottom: 1px solid black;
 }
 
+.producto-detalles{
+    align-items: center;
+    display: flex;
+    gap: inherit;
+}
+
+.producto-detalles form{
+    position: relative;
+}
+
 .producto-item img {
     width: 70px;
     height: 70px;
     object-fit: cover;
     border-radius: 8px;
+    margin-top: 30px;
 }
 
 main .pago-carrito input {
