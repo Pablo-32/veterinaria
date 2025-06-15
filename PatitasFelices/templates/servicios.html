@@ -9,11 +9,11 @@
 <body>
     
     <nav>
-        <div class="logoLogins">
-            <img src="{% static 'img/patita.png' %}" alt="Logo">
-            <a href="{% url 'home' %}" style="text-decoration: none; color: #FFFFFF;">Patitas Felices</a>
+        <div class="logo"><img src="../static/img/patita.png" alt=""><span class="highlight-grey">Patitas <span 
+            class="highlight-pink">Felices</span></span>
         </div>
-        <ul>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="menu">
             <li><a href="{% url 'home' %}">Inicio</a></li>
             <li><a href="{% url 'servicios' %}">Servicios</a></li>
             <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
@@ -21,41 +21,45 @@
             <li><a href="{% url 'tienda' %}">Tienda</a></li>
         </ul>
     </nav>
-
-    <!-- Contenido principal -->
-    <main class="container">
-        <div class="card1">
-            <div class="nosotros1">
-                <div class="content1">
-                    <h2>Consultorio</h2>
-                    <img src="{% static 'img/9.png' %}" alt="Consultorio">
-                </div>
-            </div>
+    
+    
+    
+<!-- Contenido principal -->
+    <main >
+     <div class="servicios-container">   
+        <div class="content1">
+            <img src="{% static 'img/11.jpg' %}" alt="Consultorio">
+            <h2>"En Patitas Felices, tu mascota estará en manos expertas, recibiendo la atención que necesita para una rápida recuperación."</h2>
         </div>
-        <div class="card1">
-            <div class="nosotros1">
-                <div class="content1">
-                    <h2>Vacunación</h2>
-                    <img src="{% static 'img/8.png' %}" alt="Vacunación">
-                </div>
-            </div>
+        <div class="content1">
+            <h2>"Salud y bienestar para tu mejor amigo, con el respaldo de profesionales comprometidos."</h2>
+             <img src="{% static 'img/12.png' %}" alt="Consultorio">
         </div>
-        <div class="card1">
-            <div class="nosotros1">
-                <div class="content1">
-                    <h2>Peluquería</h2>
-                    <img src="{% static 'img/7.png' %}" alt="Peluquería">
-                </div>
-            </div>
+        <div class="content1">
+            <img src="{% static 'img/13.jpg' %}" alt="Consultorio">
+            <h2>"La salud de tu mascota es nuestra prioridad. Agenda su vacunación hoy mismo."</h2>
         </div>
-        <div class="card1">
-            <div class="nosotros1">
-                <div class="content1">
-                    <h2>Cirugía</h2>
-                    <img src="{% static 'img/6.png' %}" alt="Cirugía">
-                </div>
-            </div>
+        <div class="content1">
+            <h2>"Tu perro merece verse y sentirse genial. Dale el cuidado que se merece con nuestros servicios de peluquería profesional."</h2>
+            <img src="{% static 'img/14.jpg' %}" alt="Consultorio">
         </div>
-    </main>
+     </div>    
+</main>
+    <footer>
+    <div class="footer-content">
+        <div>
+            <p>&copy; 2025 Patitas Felices. Todos los derechos reservados.</p>
+        </div>
+        <div>
+            <p>Desarrollado por The coders</p>
+        </div>
+    </div>
+</footer>
+ <script>
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        menu.classList.toggle('show');
+     }
+ </script>
 </body>
 </html>

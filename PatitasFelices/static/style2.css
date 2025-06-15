@@ -1,0 +1,199 @@
+html, body {
+            overflow-x: hidden; /* Oculta el scroll horizontal */
+            width: 100%; /* Asegura que ocupen el 100% del ancho del viewport */
+            margin: 0; /* Elimina márgenes por defecto */
+            padding: 0; /* Elimina padding por defecto */
+            box-sizing: border-box; /* Importante para que padding/border no sumen ancho */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* AJUSTE PARA BARRA LATERAL: Reducir padding */
+            padding: 10px; /* Reducido para dejar más espacio al contenido */
+            box-sizing: border-box;
+            position: relative; /* Necesario para posicionar el pseudo-elemento */
+            z-index: 1;
+        }
+
+         body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('img/dog-seamless-pattern-paws-bones-260nw-2350264459.jpg');
+            background-size: cover;
+            background-repeat: repeat;
+            background-position: center;
+            filter: grayscale(100%) brightness(90%);
+            opacity: 0.4; /* Ajustar opacidad */
+            z-index: -1;
+        }
+    .logo{
+      display: flex;
+      align-items: baseline;
+      margin-left: 18px;
+}
+
+ .logo img{
+    width: 35px;
+    margin-right: 1rem;
+ }
+        .menu-toggle{
+    display: none;
+}
+
+        nav {
+            /*background-color: rgba(0, 0, 0, 0.6);*/
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem;
+            /* position: absolute;*/
+            width: 100%;
+            top: 0;
+            position: fixed;
+            z-index: 10;
+ }
+  nav .logo {
+     /*color: white;*/
+     font-size: 1.5rem;
+     font-weight: bold;
+ }
+
+
+nav span .highlight-pink{
+    color: #F08080;
+}
+
+ nav ul {
+     list-style: none;
+     display: flex;
+     gap: 1.5rem;
+     padding-right: 2%;
+ }
+ nav ul li a {
+     color: #000000;
+     text-decoration: none;
+     font-size: 1.2rem;
+     transition: color 0.3s;
+ }
+ nav ul li a:hover {
+     color: #ff00b3;
+     
+ }
+        /* Estilos para el contenedor del formulario */
+        form {
+            background: linear-gradient(to right, #fc7b02, #3d4443); 
+            /*background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco ligeramente transparente para el formulario */
+            padding: 30px 40px; /* Relleno interno del formulario */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para un efecto de elevación */
+            width: 100%; /* El formulario ocupará todo el ancho disponible */
+            max-width: 450px; /* Limita el ancho máximo del formulario */
+            text-align: center; /* Centra el contenido del formulario (como el título) */
+        }
+
+        /* Para el título "Reservar turno" */
+        .form-title {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            /*font-weight: bold; /* Negrita */
+            font-size: 2.8em; 
+            color: #333; 
+            margin-bottom: 30px; /* Espacio debajo del título */
+            letter-spacing: 2px; /* Espaciado entre letras */
+            text-transform: uppercase; /* Convertir a mayúsculas */
+        }
+
+        .highlight-orange {
+            color: #f79d24;
+        }
+
+        .highlight-grey {
+            color: #615b60;
+        }
+
+        /* Estilos para los párrafos (asumiendo que cada campo está envuelto en un <p> por .as_p) */
+        form p {
+            margin-bottom: 20px; /* Espacio entre los campos del formulario */
+            text-align: left; /* Alinea etiquetas e inputs a la izquierda */
+            position: relative; /* Para posibles efectos de "float label" si se necesitan más tarde */
+        }
+
+        /* Estilos para las etiquetas (Django's .as_p envolverá label e input) */
+        form label {
+            display: block; /* Hace que las etiquetas tomen su propia línea */
+            margin-bottom: 8px; /* Espacio debajo de la etiqueta */
+            font-weight: bold; /* Negrita */
+            color: #000000; /* Color de texto */
+            font-size: 0.95em; /* Tamaño de fuente ligeramente más pequeño */
+            transition: all 0.3s ease; /* Transición suave para futuros efectos */
+        }
+
+        /* Estilos para los campos de entrada (text, email, number, date) y select */
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="number"],
+        form input[type="date"], /* Agregado para el campo de fecha */
+        form select, /* Agregado para los campos de select (hora, tipo) */
+        form textarea { /* Asumiendo que se podría usar un textarea para comentarios/asunto */
+            width: calc(100% - 20px); /* Ajusta el ancho para tener en cuenta el padding */
+            padding: 12px 10px; /* Relleno interno */
+            border: 1px solid #ccc; /* Borde gris suave */
+            border-radius: 5px; /* Bordes ligeramente redondeados */
+            font-size: 1em; /* Tamaño de fuente */
+            color: #333; /* Color de texto oscuro */
+            box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto total del elemento */
+            transition: border-color 0.3s ease; /* Transición suave para el color del borde */
+        }
+
+        form input[type="text"]:focus,
+        form input[type="email"]:focus,
+        form input[type="number"]:focus,
+        form input[type="date"]:focus,
+        form select:focus,
+        form textarea:focus {
+            border-color: #f79d24; /* Color de borde naranja al enfocar */
+            outline: none; /* Elimina el contorno predeterminado del navegador */
+            box-shadow: 0 0 5px rgba(247, 157, 36, 0.3); /* Sombra suave al enfocar */
+        }
+
+        /* Estilos para el botón de envío */
+        button[type="submit"] {
+            background-color: #F08080;
+            color: white;
+            padding: 14px 25px; /* Relleno interno */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            font-size: 1.1em; /* Tamaño de fuente */
+            cursor: pointer; /* Cambia el cursor a una mano al pasar por encima */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves para hover */
+            margin-top: 20px; /* Espacio encima del botón */
+            font-weight: bold; /* Negrita */
+            letter-spacing: 0.5px; /* Espaciado entre letras */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #fa4b4b; /* Naranja ligeramente más oscuro al pasar el ratón */
+            transform: translateY(-2px); /* Pequeño efecto de "elevación" al pasar el ratón */
+        }
+
+        button[type="submit"]:active {
+            transform: translateY(0); /* Vuelve a la posición original al hacer clic */
+        }
+
+        /* Estilos para el mensaje de éxito */
+        p.mensaje_enviado {
+            color: green; /* Color verde para el mensaje de éxito */
+            font-weight: bold; /* Negrita */
+            margin-top: -10px; /* Ajuste de margen superior */
+            margin-bottom: 20px; /* Espacio inferior */
+        }

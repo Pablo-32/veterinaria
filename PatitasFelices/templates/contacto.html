@@ -10,17 +10,18 @@
 <body>
     <!-- Navegación (copiado de base.html) -->
     <nav>
-         <div class="logoLogins"><img src="../static/img/patita.png" alt=""><a href="{% url 'home' %}" style="text-decoration: none; color: #FFFFFF;">Patitas Felices</a></div>
-        <ul>
-            <li><a href="{% url 'home' %}">Inicio</a></li>
-            <li><a href="{% url 'servicios' %}">Servicios</a></li>
-            <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
-            <li><a href="{% url 'contacto' %}">Contacto</a></li>
-            <li><a href="{% url 'tienda' %}">Tienda</a></li>
-        </ul>
+        <div class="logo"><img src="../static/img/patita.png" alt=""><span class="highlight-grey">Patitas <span class="highlight-pink">Felices</span>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul id="menu">
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="{% url 'servicios' %}">Servicios</a></li>
+                <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                <li><a href="{% url 'tienda' %}">Tienda</a></li>
+            </ul>
     </nav>
-
-    <!-- Contenido de contacto -->
+<!-- Contenido de contacto -->
     <div class="contacto-container">
         <div class="contacto-info">
             <h2>Contacto</h2>
@@ -40,6 +41,22 @@
             </iframe>
         </div>
     </div>
+    <footer>
+    <div class="footer-content">
+        <div>
+            <p>&copy; 2025 Patitas Felices. Todos los derechos reservados.</p>
+        </div>
+        <div>
+            <p>Desarrollado por The coders</p>
+        </div>
+    </div>
+</footer>
+<script>
+   function toggleMenu() {
+       const menu = document.getElementById('menu');
+       menu.classList.toggle('show');
+    }
+</script>
 </body>
 </html>
 
