@@ -17,7 +17,6 @@ body{
     align-items: center;
     min-height: 100vh;
             /* AJUSTE PARA BARRA LATERAL: Reducir padding */
-<<<<<<< HEAD
             padding: 10px; /* Reducido para dejar más espacio al contenido */
             box-sizing: border-box;
             position: relative; /* Necesario para posicionar el pseudo-elemento */
@@ -70,8 +69,7 @@ body{
      /*color: white;*/
      font-size: 1.5rem;
      font-weight: bold;
- }
-=======
+ 
     padding: 10px; /* Reducido para dejar más espacio al contenido */
     box-sizing: border-box;
     position: relative; /* Necesario para posicionar el pseudo-elemento */
@@ -92,7 +90,6 @@ body::before {
     opacity: 0.4; /* Ajustar opacidad */
     z-index: -1;
 }
->>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
 
 
 nav span .highlight-pink{
@@ -116,7 +113,6 @@ nav span .highlight-pink{
      
  }
         /* Estilos para el contenedor del formulario */
-<<<<<<< HEAD
         form {
             background: linear-gradient(to right, #fc7b02, #3d4443); 
             /*background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco ligeramente transparente para el formulario */
@@ -127,7 +123,6 @@ nav span .highlight-pink{
             max-width: 450px; /* Limita el ancho máximo del formulario */
             text-align: center; /* Centra el contenido del formulario (como el título) */
         }
-=======
 form {
     background: linear-gradient(to right, #ADD8E6, #FFA500); 
     padding: 30px 40px; /* Relleno interno del formulario */
@@ -137,7 +132,6 @@ form {
     max-width: 450px; /* Limita el ancho máximo del formulario */
     text-align: center; /* Centra el contenido del formulario (como el título) */
 }
->>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
 
         /* Estilos para el titulo "Reservar turno" */
 .form-title {

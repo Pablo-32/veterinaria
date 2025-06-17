@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Contacto</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="../static/style.css">
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
 </head>
 <body>
@@ -12,9 +12,8 @@
     <nav>
         <div class="logo"><img src="../static/img/patita.png" alt=""><span class="highlight-grey">Patitas <span class="highlight-pink">Felices</span>
         </div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-            <div class="logo"><img src="../static/img/patita.png" alt=""><span class="highlight-grey">Patitas <span class="highlight-pink">Felices</span></span>
-            </div>
+        
+        
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
             <ul id="menu">
                 <li><a href="{% url 'home' %}">Inicio</a></li>
@@ -24,16 +23,10 @@
                 <li><a href="{% url 'tienda' %}">Tienda</a></li>
             </ul>
     </nav>
+
 <!-- Contenido de contacto -->
-                <li><a href="">Contacto</a></li>
-                <li><a href="{% url 'tienda' %}">Tienda</a></li>
-            </ul>
-        </nav>
-    
-    <!-- Contenido de contacto -->
     <div class="contacto-container">
         <div class="contacto-info">
-            <h2>Contacto</h2>
             <p><strong>Dirección:</strong> Av. Siempre Viva 742, Capital Federal, Buenos Aires</p>
             <p><strong>Teléfono:</strong> +54 11 1234 5678</p>
             <p><strong>Email:</strong> contacto@veterinaria.com</p>

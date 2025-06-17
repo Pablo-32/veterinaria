@@ -20,9 +20,6 @@
             <li><a href="{% url 'contacto' %}">Contacto</a></li>
             <li><a href="{% url 'tienda' %}">Tienda</a></li>
             <li><a href="{% url 'carrito' %}"><i class="fas fa-shopping-cart"></i>Carrito </a></li>
-            {% block carrito %}
-            <li><a href="{% url 'carrito' %}"><i class="fas fa-shopping-cart"></i>Carrito <span class="cart-count">{{ productos|length }}</span></a></li>
-             {% endblock %}
         </ul>
     </nav>
 
