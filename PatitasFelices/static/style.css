@@ -14,13 +14,10 @@ body, html{
  }
  body{
     font-family: 'Segoe UI', sans-serif;
-<<<<<<< HEAD
     /*background: linear-gradient(135deg, #c5aaf5 0%, #b38ae7 40%, #a471dc 100%);*/
-=======
     display: flex;
     align-items: center;
     justify-content: center;
->>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
     height: 100%;
     position: relative;
     overflow-x: hidden;
