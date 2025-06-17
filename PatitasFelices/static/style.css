@@ -1,11 +1,12 @@
  
- * {
+body, html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
  }
 
- /* BASE HTML*/
  a{
     color: #2e175d;
     font-size: 1.2rem;
@@ -13,7 +14,13 @@
  }
  body{
     font-family: 'Segoe UI', sans-serif;
+<<<<<<< HEAD
     /*background: linear-gradient(135deg, #c5aaf5 0%, #b38ae7 40%, #a471dc 100%);*/
+=======
+    display: flex;
+    align-items: center;
+    justify-content: center;
+>>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
     height: 100%;
     position: relative;
     overflow-x: hidden;
@@ -40,7 +47,7 @@
   z-index: -1;
 }
 
-/* Colores en el título */
+/* Colores generales */
 .highlight-orange {
     color: #f79d24;
 }
@@ -48,6 +55,12 @@
 .highlight-grey {
     color: #615b60;
 }
+
+.highlight-lightblue {
+    color: #6495ED;
+}
+
+ /*------------------------------CONTENIDO DE HOME-----------------------------------*/
 
 /* Figura ovalada detrás de los animales */
 .imagen-fondo {
@@ -73,11 +86,14 @@
 .logo{
     display: flex;
     align-items: baseline;
+    /*display: flex;
+    align-items: center;*/
+    gap: 1rem;
 }
 
- .logo img{
+.logo img{
     width: 35px;
-    margin-right: 1rem;
+    margin-left: 1rem;
  }
 .grid-container {
   display: grid;
@@ -134,11 +150,13 @@
   grid-row: 1/ span 2;
   height: 92vh;
 }
-.item2 img {
+.item2 img { 
   width: 60%;
-  height: auto;
+  height: auto;         /*-------------IMAGEN PERRO Y GATO--------------*/
   margin-left: 20%;
 }
+
+
 .item3 {
   grid-column: 1 / span 2;
   display: flex;
@@ -171,16 +189,21 @@ nav {
      display: flex;
      justify-content: space-between;
      align-items: center;
+<<<<<<< HEAD
      padding: 0.5rem;
+=======
+     padding: 1.7rem 3rem;;
+     padding-left: 4rem;
+>>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
     /* position: absolute;*/
      width: 100%;
      top: 0;
      position: fixed;
      z-index: 10;
+    
  }
 
-
- nav .logo {
+nav .logo {
      /*color: white;*/
      font-size: 1.5rem;
      font-weight: bold;
@@ -205,6 +228,10 @@ nav span .highlight-pink{
      color: #ff00b3;
      
  }
+
+
+/*----------------CHEQUEAR A QUE PARTE DEL CODIGO PERTENECE---------------------------*/
+
 .form-container {
     background-color: rgba(2, 10, 26, 0.2); /* celeste transparente */
     border: 2px solid #6495ED;
@@ -262,23 +289,52 @@ form button:hover {
     width: 28px;
 }
 
+<<<<<<< HEAD
 .servicios-container{
     margin-top: 63px;
 }
+=======
+ /*------------------------------CONTENIDO DE NO SE-----------------------------------
+
+
+.card1{
+    border-radius: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 21%;
+    height: 280px;
+}
+*/
+
+
+ /*------------------------------CONTENIDO DE SERVICIOS-----------------------------------*/
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* espacio entre las tarjetas */
+    margin-top: 70px;
+    margin-right: 50px;
+    
+}
+>>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
 
 .nosotros1{
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 91px;
+    margin-top: 30px;
 }
 
-.contenido1{
+.card1 {
+    flex: 0 1 40%;
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 218px;
-    flex-wrap: wrap;
+    justify-content: center;
 }
+<<<<<<< HEAD
 .content1{
     display: flex;
     justify-content: center;
@@ -289,29 +345,79 @@ form button:hover {
 }
 .content1 img{
     width: 48%;
+=======
+
+.content1{
+    text-align: center;
+}
+.content1 img{
+    width: 270px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+>>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
     
 }
 
 .content1 h2{
+<<<<<<< HEAD
     width: 49%;
     font-weight: bold;
+=======
+    font-size: 23px;
+    margin-bottom: 10px;
+
+}
+
+.cons{
+    background-color:#f79d24;
+}
+
+.vac{
+    background-color:#6495ED;
+}
+
+.pelu{
+    background-color:#F08080;
+}
+
+.cir{
+    background-color:#615b60;
+>>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
 }
 .mensajes li {
     color: green;
-    font-weight: bold;
+    font-weight: bold;      /*REGISTRO HTML*/
 }
 
+
+ /*------------------------------CONTENIDO DE TIENDA-----------------------------------*/
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;       
+    justify-content: center;
+    margin-top: 70px;
+    margin-bottom:60px;
+}
 
 .producto {
     background-color: white;
     border: 1px solid #ddd;
     padding: 16px;
+    padding-top: 20px;
+    margin-top: 20%;
     max-width: 300px;
     height: 400px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 40px;
     display: grid;
+}
+
+.producto:hover{
+    transform: scale(1.1);
 }
 
 
@@ -327,10 +433,12 @@ form button:hover {
     margin: auto;
     border: none;
     border-radius: 10px;
-    background-color: violet;
+    background-color: rgb(177, 83, 224);
     color: #ffffff;
 }
-
+.producto p{
+    font-weight: 10px;
+}
 .contenido{
     display: flex;
     justify-content: space-evenly;
@@ -354,18 +462,13 @@ form button:hover {
     border: none;
     border-radius: 12px;
     padding: 8px;
-    background-color: darkorchid;
+    background-color: rgb(177, 83, 224);
     color: #ffffff;
     cursor: pointer;
     margin-top: 8px;
 }
-.card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 70px;
-}
+
+ /*------------------------------CONTENIDO DE NOSOTROS-----------------------------------*/
 
 .nosotros-container {
     display: flex;
@@ -378,7 +481,11 @@ form button:hover {
 .nosotros-img{
     display: flex;
     justify-content: center;
+<<<<<<< HEAD
     width: 65%;
+=======
+    width: 50%;
+>>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
 }
 
 .nosotros-img img {
@@ -394,24 +501,39 @@ form button:hover {
     line-height: 1.4;
 }
 
+ /*------------------------------CONTENIDO DE CONTACTO-----------------------------------*/
+
 .contacto-container {
     display: flex;
+<<<<<<< HEAD
     justify-content: space-between;
     padding: 40px;
     flex-wrap: wrap;
     width: 100%;
     margin-top: 168px;
     gap: 20px;
+=======
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 5%;
+    max-width: 1200px;
+    margin-top: 15%;
+
+>>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
 }
 
 .contacto-info {
     flex: 1;
-    min-width: 250px;
-    margin-top: auto;
-    margin-bottom: auto;
+    min-width: 300px;
+    max-width: 500px;
+    margin-top: 5%;
+    background-color: #6495ED;
+    text-align: center;
 }
       
 .contacto-mapa {
+<<<<<<< HEAD
     height: 100%;
     width: 50%;
     /* margin-top: auto; */
@@ -419,13 +541,28 @@ form button:hover {
     align-items: center;
     box-shadow: 0 0 15px deeppink;
     
+=======
+    flex: 1.2;                   /* le damos un poco más de espacio que al texto */
+    min-width: 300px;
+    max-width: 700px;            /* límite para que no se desborde en pantallas grandes */
+    width: 100%;  
+    margin-left: 150px; 
+>>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
 }
-.container{
+
+.contacto-mapa iframe {
+    border: 4px solid #F08080; /* Cambia el color y el grosor como desees */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+}
+
+/*.container{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     height: 97vh;
-}
+}*/
+
+ /*------------------------------CONTENIDO DE CARRITO-----------------------------------*/
 
 .carrito-wrapper {
     display: flex;
@@ -447,8 +584,13 @@ form button:hover {
 }
 
 .pago-carrito {
+<<<<<<< HEAD
     flex: 1;
     background: linear-gradient(135deg, #c5aaf5 0%, #b38ae7 40%, #a471dc 100%);
+=======
+    flex: 2;
+    background: #2f6ada;
+>>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
     color: white;
 }
 
@@ -527,21 +669,96 @@ main .contenido_carrito{
   width: 35px;
 }
 
-footer{
+.contenido {
+    flex: 1;
+    padding: 20px;
+}
+
+
+ /*------------------------------CONTENIDO DE BASE-----------------------------------*/
+
+
+footer {
+    background-color: #F08080;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
     width: 100%;
+    
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin-left:8% ;
+    margin-top: 6px;
+    flex-wrap: wrap;
+}
+
+.footer-content div {
+    margin: 5px 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/*
+footer{
+    /*width: 100%;
     background-color: hotpink;
     height: 200px;
     margin-top: 70px;
+    
+     background-color: hotpink;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .footer-content{
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;
     height: 200px;
     align-items: end;
+
+    justify-content: space-between;
+    align-items: end;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
 }
 
+<<<<<<< HEAD
 
+=======
+.footer-content div {
+    margin: 5px 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}*/
+
+ /*------------------------------MODIFICA AL NAV-----------------------------------*/
+>>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
 
 
 @media (max-width: 768px) {

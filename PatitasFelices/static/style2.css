@@ -1,3 +1,6 @@
+
+/*---------------------------CONTENIDO DE FORMS.PY/SOLICITAR TURNO----------------------*/
+
 html, body {
             overflow-x: hidden; /* Oculta el scroll horizontal */
             width: 100%; /* Asegura que ocupen el 100% del ancho del viewport */
@@ -6,14 +9,15 @@ html, body {
             box-sizing: border-box; /* Importante para que padding/border no sumen ancho */
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+body{
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
             /* AJUSTE PARA BARRA LATERAL: Reducir padding */
+<<<<<<< HEAD
             padding: 10px; /* Reducido para dejar más espacio al contenido */
             box-sizing: border-box;
             position: relative; /* Necesario para posicionar el pseudo-elemento */
@@ -67,6 +71,28 @@ html, body {
      font-size: 1.5rem;
      font-weight: bold;
  }
+=======
+    padding: 10px; /* Reducido para dejar más espacio al contenido */
+    box-sizing: border-box;
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+    z-index: 1;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/dog-seamless-pattern-paws-bones-260nw-2350264459.jpg');
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    filter: grayscale(100%) brightness(90%);
+    opacity: 0.4; /* Ajustar opacidad */
+    z-index: -1;
+}
+>>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
 
 
 nav span .highlight-pink{
@@ -90,6 +116,7 @@ nav span .highlight-pink{
      
  }
         /* Estilos para el contenedor del formulario */
+<<<<<<< HEAD
         form {
             background: linear-gradient(to right, #fc7b02, #3d4443); 
             /*background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco ligeramente transparente para el formulario */
@@ -100,26 +127,93 @@ nav span .highlight-pink{
             max-width: 450px; /* Limita el ancho máximo del formulario */
             text-align: center; /* Centra el contenido del formulario (como el título) */
         }
+=======
+form {
+    background: linear-gradient(to right, #ADD8E6, #FFA500); 
+    padding: 30px 40px; /* Relleno interno del formulario */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para un efecto de elevación */
+    width: 100%; /* El formulario ocupará todo el ancho disponible */
+    max-width: 450px; /* Limita el ancho máximo del formulario */
+    text-align: center; /* Centra el contenido del formulario (como el título) */
+}
+>>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
 
-        /* Para el título "Reservar turno" */
-        .form-title {
-            font-family: "Poppins", sans-serif;
-            font-weight: 600;
-            /*font-weight: bold; /* Negrita */
-            font-size: 2.8em; 
-            color: #333; 
-            margin-bottom: 30px; /* Espacio debajo del título */
-            letter-spacing: 2px; /* Espaciado entre letras */
-            text-transform: uppercase; /* Convertir a mayúsculas */
-        }
+        /* Estilos para el titulo "Reservar turno" */
+.form-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    /*font-weight: bold; /* Negrita */
+    font-size: 2.8em; 
+    color: #333;
+    padding-top: 5%;
+    margin-bottom: 30px; /* Espacio debajo del título */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    text-transform: uppercase; /* Convertir a mayúsculas */
+}
 
-        .highlight-orange {
-            color: #f79d24;
-        }
+.highlight-orange {
+    color: #f79d24;
+}
 
-        .highlight-grey {
-            color: #615b60;
-        }
+.highlight-grey {
+    color: #615b60;
+}
+
+
+.logo{
+    display: flex;
+    align-items: baseline;
+    /*display: flex;
+    align-items: center;*/
+    gap: 1rem;
+}
+
+.logo img{
+    width: 35px;
+    margin-left: 1rem;
+ }
+
+nav {
+     /*background-color: rgba(0, 0, 0, 0.6);*/
+     background-color: transparent;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1.7rem 3rem;;
+     padding-left: 4rem;
+    /* position: absolute;*/
+     width: 100%;
+     top: 0;
+     position: fixed;
+     z-index: 10;
+}
+
+ nav .logo {
+     /*color: white;*/
+    font-size: 1.5rem;
+    font-weight: bold; 
+ }
+nav span .highlight-pink{
+    color: #F08080;
+}
+
+ nav ul {
+     list-style: none;
+     display: flex;
+     gap: 1.5rem;
+     padding-right: 2%;
+ }
+ nav ul li a {
+     color: #615b60;
+     text-decoration: none;
+     font-size: 1.2rem;
+     font-weight: bold;
+     transition: color 0.3s;
+ }
+ nav ul li a:hover {
+     color: #6495ED;
+ }
 
         /* Estilos para los párrafos (asumiendo que cada campo está envuelto en un <p> por .as_p) */
         form p {

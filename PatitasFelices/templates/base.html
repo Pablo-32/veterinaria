@@ -10,7 +10,8 @@
 </head>
 <body>
     <nav>
-        <div class="logo"><img src="../static/img/patita.png" alt="">Patitas Felices</div>
+        <div class="logo"><img src="../static/img/patita.png" alt=""><span class="highlight-grey">Patitas <span class="highlight-pink">Felices</span></span>
+        </div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul id="menu">
             <li><a href="{% url 'home' %}">Inicio</a></li>
@@ -18,7 +19,13 @@
             <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
             <li><a href="{% url 'contacto' %}">Contacto</a></li>
             <li><a href="{% url 'tienda' %}">Tienda</a></li>
+<<<<<<< HEAD
             <li><a href="{% url 'carrito' %}"><i class="fas fa-shopping-cart"></i>Carrito </a></li>
+=======
+            {% block carrito %}
+            <li><a href="{% url 'carrito' %}"><i class="fas fa-shopping-cart"></i>Carrito <span class="cart-count">{{ productos|length }}</span></a></li>
+             {% endblock %}
+>>>>>>> ff4993260aa96033778f8e20e8ad88824aaa3caa
         </ul>
     </nav>
 

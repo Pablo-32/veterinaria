@@ -48,11 +48,6 @@ def contacto(request):
 def tienda_view(request):
     return render(request, 'tienda.html')
 
-def tienda(request):
-    productos = Producto.objects.all()
-    return render(request, 'tienda.html', {'productos': productos})
-
-
 
 def register(request):
     if request.method == 'POST':
@@ -147,4 +142,3 @@ def eliminar_del_carrito(request, producto_id):
         carrito.remove(producto_id)
         request.session['carrito'] = carrito
     return redirect('carrito')
-
