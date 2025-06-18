@@ -10,13 +10,6 @@ class Producto(models.Model):
     def __str__(self):
         return self.nombre
     
-#----Múltiples imágenes por producto
-class ImagenProducto(models.Model):
-    producto = models.ForeignKey(Producto, on_delete=models.CASCADE, related_name='imagenes_adicionales')
-    imagen = models.ImageField(upload_to='productos/imagenes_adicionales/')
-
-    def __str__(self):
-        return f"Imagen extra de {self.producto.nombre}"
     
 class Turno(models.Model):
     nombre = models.CharField(max_length=100)

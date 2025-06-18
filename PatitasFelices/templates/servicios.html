@@ -7,63 +7,67 @@
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
+      <nav>
+            <div class="logo"><img src="../static/img/patita.png" alt=""><span class="highlight-grey">Patitas <span class="highlight-pink">Felices</span></span>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul id="menu">
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="{% url 'servicios' %}">Servicios</a></li>
+                <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                <li><a href="{% url 'tienda' %}">Tienda</a></li>
+            </ul>
+        </nav>
     
-    <nav>
+    <!--<nav>
         <div class="logoLogins">
             <img src="{% static 'img/patita.png' %}" alt="Logo">
             <a href="{% url 'home' %}" style="text-decoration: none; color: #FFFFFF;">Patitas Felices</a>
         </div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <ul id="menu">
+        <ul>
             <li><a href="{% url 'home' %}">Inicio</a></li>
             <li><a href="{% url 'servicios' %}">Servicios</a></li>
             <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
             <li><a href="{% url 'contacto' %}">Contacto</a></li>
             <li><a href="{% url 'tienda' %}">Tienda</a></li>
         </ul>
-    </nav>
+    </nav>-->
 
     <!-- Contenido principal -->
     <main class="container">
         <div class="card1">
             <div class="nosotros1">
                 <div class="content1">
-                    <h2>Consultorio</h2>
-                    <img src="{% static 'img/9.png' %}" alt="Consultorio">
+                    <h2 class="cons">Consultorio</h2>
+                    <img src="{% static 'img/consultorio_vet.jpg' %}" alt="Consultorio">
                 </div>
             </div>
         </div>
         <div class="card1">
             <div class="nosotros1">
                 <div class="content1">
-                    <h2>Vacunación</h2>
-                    <img src="{% static 'img/8.png' %}" alt="Vacunación">
+                    <h2 class="vac">Vacunación</h2>
+                    <img src="{% static 'img/vacunacion.jpg' %}" alt="Vacunación">
                 </div>
             </div>
         </div>
         <div class="card1">
             <div class="nosotros1">
                 <div class="content1">
-                    <h2>Peluquería</h2>
-                    <img src="{% static 'img/7.png' %}" alt="Peluquería">
+                    <h2 class="pelu">Peluquería</h2>
+                    <img src="{% static 'img/peluqueria.jpg' %}" alt="Peluquería">
                 </div>
             </div>
         </div>
         <div class="card1">
             <div class="nosotros1">
                 <div class="content1">
-                    <h2>Cirugía</h2>
-                    <img src="{% static 'img/6.png' %}" alt="Cirugía">
+                    <h2 class="cir">Cirugía</h2>
+                    <img src="{% static 'img/cirugia.jpg' %}" alt="Cirugía">
                 </div>
             </div>
         </div>
-    </div>
-</footer>
- <script>
-    function toggleMenu() {
-        const menu = document.getElementById('menu');
-        menu.classList.toggle('show');
-     }
- </script>
+    </main>
 </body>
 </html>

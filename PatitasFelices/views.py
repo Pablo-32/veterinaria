@@ -7,6 +7,7 @@ from django.shortcuts import render
 from django.contrib import messages
 from .models import Producto
 from .forms import RegistroUsuarioForm
+from .forms import ProductoForm
 
 
 
@@ -142,3 +143,14 @@ def eliminar_del_carrito(request, producto_id):
         carrito.remove(producto_id)
         request.session['carrito'] = carrito
     return redirect('carrito')
+
+
+def formulario_cargar_mas(request):
+    if request.method == 'POST':
+        form = ProductoForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('tienda')  # Redirige a la tienda actualizada
+    else:
+        form = ProductoForm()
+    return render(request, 'cargar_mas_formulario.html', {'form': form})

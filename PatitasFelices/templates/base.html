@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Patitas Felices{% endblock %}</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
@@ -19,13 +19,16 @@
             <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
             <li><a href="{% url 'contacto' %}">Contacto</a></li>
             <li><a href="{% url 'tienda' %}">Tienda</a></li>
-            <li><a href="{% url 'carrito' %}"><i class="fas fa-shopping-cart"></i>Carrito </a></li>
+            {% block carrito %}
+            <li><a href="{% url 'carrito' %}"><i class="fas fa-shopping-cart"></i>Carrito <span class="cart-count">{{ productos|length }}</span></a></li>
+             {% endblock %}
         </ul>
     </nav>
 
     <div class="contenido">
         {% block content %}{% endblock %}
     </div>
+    {% block footer %}
     <footer>
         <div class="footer-content">
             <div>
@@ -36,7 +39,7 @@
             </div>
         </div>
     </footer>
-    
+    {% endblock %}
     <script>
        function toggleMenu() {
            const menu = document.getElementById('menu');

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Cargar nuevo producto{% endblock %}
+
+{% block content %}
+<h1 >Cargar nuevo producto</h1>
+
+<form method="post" enctype="multipart/form-data" class="formulario-cargar">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar producto</button>
+</form>
+
+<a href="{% url 'tienda' %}">Volver a la tienda</a>
+
+{% endblock %}
+
+{% block footer %}{% comment %} No mostrar footer {% endcomment %}{% endblock %}

@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Turno
+from .models import Producto
 import datetime
 
 class RegistroUsuarioForm(UserCreationForm):
@@ -18,7 +19,7 @@ class FormTurnos(forms.ModelForm):
         labels = {
             'nombre': 'Nombre completo',
             'nombre_mascota': 'Nombre de la mascota',
-            'animal': 'Tipo de Mascota',
+            'animal': 'Mascota',
             'edad_mascota': 'Edad de la mascota',
             'tipo': 'Tipo de turno',
             'fecha': 'Fecha del turno',
@@ -57,3 +58,15 @@ class FormTurnos(forms.ModelForm):
         if fecha.weekday() in (5, 6): #Sabado y domingo no
             raise forms.ValidationError("No se dan turnos los fines de semana.")
         return fecha
+    
+
+class ProductoForm(forms.ModelForm):
+    class Meta:
+        model = Producto
+        fields = ['nombre', 'descripcion', 'precio', 'imagen']
+        widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+            'descripcion': forms.Textarea(attrs={'class': 'form-control'}),
+            'precio': forms.NumberInput(attrs={'class': 'form-control'}),
+            'imagen': forms.ClearableFileInput(attrs={'class': 'form-control'}),
+        }

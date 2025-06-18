@@ -1,4 +1,5 @@
- body, html{
+ 
+body, html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,7 +14,6 @@
  }
  body{
     font-family: 'Segoe UI', sans-serif;
-    /*background: linear-gradient(135deg, #c5aaf5 0%, #b38ae7 40%, #a471dc 100%);*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -185,7 +185,6 @@ nav {
      display: flex;
      justify-content: space-between;
      align-items: center;
-     padding: 0.5rem;
      padding: 1.7rem 3rem;;
      padding-left: 4rem;
     /* position: absolute;*/
@@ -212,21 +211,20 @@ nav span .highlight-pink{
      padding-right: 2%;
  }
  nav ul li a {
-     color: #000000;
+     color: #615b60;
      text-decoration: none;
      font-size: 1.2rem;
      transition: color 0.3s;
  }
  nav ul li a:hover {
-     color: #ff00b3;
-     
+     color: #6495ED;
  }
 
 
 /*----------------CHEQUEAR A QUE PARTE DEL CODIGO PERTENECE---------------------------*/
 
 .form-container {
-    background-color: rgba(2, 10, 26, 0.2); /* celeste transparente */
+    background-color: rgba(100, 149, 237, 0.2); /* celeste transparente */
     border: 2px solid #6495ED;
     border-radius: 20px;
     padding: 2rem;
@@ -321,16 +319,6 @@ form button:hover {
     display: flex;
     justify-content: center;
 }
-.content1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 8px;
-}
-.content1 img{
-    width: 48%;
 
 .content1{
     text-align: center;
@@ -344,8 +332,6 @@ form button:hover {
 }
 
 .content1 h2{
-    width: 49%;
-    font-weight: bold;
     font-size: 23px;
     margin-bottom: 10px;
 
@@ -436,7 +422,7 @@ form button:hover {
     border-radius: 12px;
     padding: 8px;
     width: 363px;
-    margin-bottom: 12px;
+    margin: 4px;
 }
 
 .contenido form button{
@@ -446,8 +432,26 @@ form button:hover {
     background-color: rgb(177, 83, 224);
     color: #ffffff;
     cursor: pointer;
-    margin-top: 8px;
+    margin-top: 3px;
+    margin-right: 50px;
 }
+
+.contenedor-cargar {
+    display: inline-block;
+    margin-left: 50px;
+    
+}
+
+.boton-cargar {
+    background-color: #f79d24;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
 
  /*------------------------------CONTENIDO DE NOSOTROS-----------------------------------*/
 
@@ -456,13 +460,12 @@ form button:hover {
     align-items: center;
     justify-content: center;
     padding: 40px;
-    margin-top: 100px;
+    gap: 40px;
 }
 
 .nosotros-img{
     display: flex;
     justify-content: center;
-    width: 65%;
     width: 50%;
 }
 
@@ -483,12 +486,6 @@ form button:hover {
 
 .contacto-container {
     display: flex;
-    justify-content: space-between;
-    padding: 40px;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 168px;
-    gap: 20px;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -508,28 +505,24 @@ form button:hover {
 }
       
 .contacto-mapa {
-    height: 100%;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 0 15px deeppink;
-    
     flex: 1.2;                   /* le damos un poco más de espacio que al texto */
     min-width: 300px;
+    max-width: 700px;            /* límite para que no se desborde en pantallas grandes */
     width: 100%;  
     margin-left: 150px; 
 }
 
+.contacto-mapa iframe {
     border: 4px solid #F08080; /* Cambia el color y el grosor como desees */
     border-radius: 8px; /* Opcional: bordes redondeados */
 }
 
-.container{
+/*.container{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     height: 97vh;
-}
+}*/
 
  /*------------------------------CONTENIDO DE CARRITO-----------------------------------*/
 
@@ -553,8 +546,6 @@ form button:hover {
 }
 
 .pago-carrito {
-    flex: 1;
-    background: linear-gradient(135deg, #c5aaf5 0%, #b38ae7 40%, #a471dc 100%);
     flex: 2;
     background: #2f6ada;
     color: white;
@@ -566,17 +557,7 @@ form button:hover {
     margin-top: 15px;
     height: 149px;
     justify-content: center;
-    border-bottom: 1px solid rgb(252, 59, 226);
-}
-
-.producto-detalles{
-    align-items: center;
-    display: flex;
-    gap: inherit;
-}
-
-.producto-detalles form{
-    position: relative;
+    border-bottom: 1px solid black;
 }
 
 .producto-item img {
@@ -584,7 +565,6 @@ form button:hover {
     height: 70px;
     object-fit: cover;
     border-radius: 8px;
-    margin-top: 30px;
 }
 
 main .pago-carrito input {
@@ -607,7 +587,6 @@ main .contenido .pago-carrito form input{
 
 .iconos-tarjeta img{
     width: 50px;
-    margin: 7px 0 7px;
 }
 
 .fila {
@@ -631,15 +610,63 @@ main .contenido_carrito{
     margin-left: 4px;
 }
 
-.logoLogins img{
-  width: 35px;
-}
 
 .contenido {
     flex: 1;
     padding: 20px;
 }
 
+ /*-----------------------CONTENIDO DE CARGAR MAS FORMULARIO----------------------------*/
+
+
+.formulario-cargar {
+    max-width: 500px;
+    /*margin: 20px auto;*/
+    margin-top: 110px;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.formulario-cargar h1 {
+    text-align: center;
+    color: #333;
+}
+
+.formulario-cargar input[type="text"],
+.formulario-cargar input[type="file"],
+.formulario-cargar textarea,
+.formulario-cargar select {
+    width: 100%;
+    /*padding: 8px 12px;*/
+    margin-bottom: 12px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.formulario-cargar button[type="submit"] {
+    background-color: #f08080;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.formulario-cargar button[type="submit"]:hover {
+    background-color: #d96b6b;
+}
+
+.formulario-cargar a {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    color: #555;
+    text-decoration: none;
+}
 
  /*------------------------------CONTENIDO DE BASE-----------------------------------*/
 
@@ -677,8 +704,10 @@ footer {
     }
 }
 
+
+/*
 footer{
-    width: 100%;
+    /*width: 100%;
     background-color: hotpink;
     height: 200px;
     margin-top: 70px;
@@ -696,7 +725,7 @@ footer{
 
 .footer-content{
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;
     height: 200px;
     align-items: end;
 
@@ -708,7 +737,6 @@ footer{
     flex-wrap: wrap;
 }
 
-
 .footer-content div {
     margin: 5px 10px;
 }
@@ -719,11 +747,9 @@ footer{
         text-align: center;
     }
 
-}
+}*/
 
-.menu-toggle{
-    display: none
-}
+ /*------------------------------MODIFICA AL NAV-----------------------------------*/
 
 
 @media (max-width: 768px) {
@@ -738,17 +764,13 @@ footer{
          height: 100vh;
          padding: 10px
      }
-     nav ul li a {
-         color: #000000;
-     }
      nav ul.show {
          display: flex;
          z-index: 1000;
-         margin-top: 23px;
      }
      .menu-toggle {
          display: block;
-         color: #000000;
+         color: white;
          font-size: 2rem;
          cursor: pointer;
      }
@@ -795,6 +817,6 @@ footer{
  }
  @media (min-width: 769px) {
      .menu-toggle {
-         display: show;
+         display: none;
      }
  }

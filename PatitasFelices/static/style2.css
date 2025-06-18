@@ -17,59 +17,6 @@ body{
     align-items: center;
     min-height: 100vh;
             /* AJUSTE PARA BARRA LATERAL: Reducir padding */
-            padding: 10px; /* Reducido para dejar más espacio al contenido */
-            box-sizing: border-box;
-            position: relative; /* Necesario para posicionar el pseudo-elemento */
-            z-index: 1;
-        }
-
-         body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('img/dog-seamless-pattern-paws-bones-260nw-2350264459.jpg');
-            background-size: cover;
-            background-repeat: repeat;
-            background-position: center;
-            filter: grayscale(100%) brightness(90%);
-            opacity: 0.4; /* Ajustar opacidad */
-            z-index: -1;
-        }
-    .logo{
-      display: flex;
-      align-items: baseline;
-      margin-left: 18px;
-}
-
- .logo img{
-    width: 35px;
-    margin-right: 1rem;
- }
-        .menu-toggle{
-    display: none;
-}
-
-        nav {
-            /*background-color: rgba(0, 0, 0, 0.6);*/
-            background-color: transparent;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem;
-            /* position: absolute;*/
-            width: 100%;
-            top: 0;
-            position: fixed;
-            z-index: 10;
- }
-  nav .logo {
-     /*color: white;*/
-     font-size: 1.5rem;
-     font-weight: bold;
- 
     padding: 10px; /* Reducido para dejar más espacio al contenido */
     box-sizing: border-box;
     position: relative; /* Necesario para posicionar el pseudo-elemento */
@@ -92,37 +39,7 @@ body::before {
 }
 
 
-nav span .highlight-pink{
-    color: #F08080;
-}
-
- nav ul {
-     list-style: none;
-     display: flex;
-     gap: 1.5rem;
-     padding-right: 2%;
- }
- nav ul li a {
-     color: #000000;
-     text-decoration: none;
-     font-size: 1.2rem;
-     transition: color 0.3s;
- }
- nav ul li a:hover {
-     color: #ff00b3;
-     
- }
         /* Estilos para el contenedor del formulario */
-        form {
-            background: linear-gradient(to right, #fc7b02, #3d4443); 
-            /*background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco ligeramente transparente para el formulario */
-            padding: 30px 40px; /* Relleno interno del formulario */
-            border-radius: 10px; /* Bordes redondeados */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para un efecto de elevación */
-            width: 100%; /* El formulario ocupará todo el ancho disponible */
-            max-width: 450px; /* Limita el ancho máximo del formulario */
-            text-align: center; /* Centra el contenido del formulario (como el título) */
-        }
 form {
     background: linear-gradient(to right, #ADD8E6, #FFA500); 
     padding: 30px 40px; /* Relleno interno del formulario */
@@ -221,7 +138,7 @@ nav span .highlight-pink{
             display: block; /* Hace que las etiquetas tomen su propia línea */
             margin-bottom: 8px; /* Espacio debajo de la etiqueta */
             font-weight: bold; /* Negrita */
-            color: #000000; /* Color de texto */
+            color: #555; /* Color de texto */
             font-size: 0.95em; /* Tamaño de fuente ligeramente más pequeño */
             transition: all 0.3s ease; /* Transición suave para futuros efectos */
         }
