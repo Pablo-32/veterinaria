@@ -147,9 +147,9 @@ body, html{
   height: 92vh;
 }
 .item2 img { 
-  width: 60%;
+  width: 80%;
   height: auto;         /*-------------IMAGEN PERRO Y GATO--------------*/
-  margin-left: 20%;
+  /*margin-left: 20%;*/
 }
 
 
@@ -297,45 +297,27 @@ form button:hover {
  /*------------------------------CONTENIDO DE SERVICIOS-----------------------------------*/
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px; /* espacio entre las tarjetas */
-    margin-top: 70px;
-    margin-right: 50px;
-    
+margin-top: 170px;
 }
-
-.nosotros1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 91px;
-    margin-top: 30px;
-}
-
-.card1 {
-    flex: 0 1 40%;
-    display: flex;
-    justify-content: center;
-}
-
 .content1{
-    text-align: center;
+    display: flex;
 }
 .content1 img{
-    width: 270px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    
+    width: 50%;
 }
 
-.content1 h2{
-    font-size: 23px;
-    margin-bottom: 10px;
-
+.text1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    background-color: antiquewhite;
 }
+
+
+
 
 .cons{
     background-color:#f79d24;
@@ -376,22 +358,36 @@ form button:hover {
     padding-top: 20px;
     margin-top: 20%;
     max-width: 300px;
-    height: 400px;
+    height: 508px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 40px;
     display: grid;
 }
 
-.producto:hover{
-    transform: scale(1.1);
-}
-
-
 .producto img {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
+}
+
+.producto img:hover{
+    transform: scale(1.1);
+}
+
+.producto-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+}
+
+.producto-info h4{
+    padding: 13px;
+}
+
+.producto-info p{
+    width: 168px;
 }
 
 .producto button{
@@ -402,9 +398,22 @@ form button:hover {
     border-radius: 10px;
     background-color: rgb(177, 83, 224);
     color: #ffffff;
+    cursor: pointer;
 }
 .producto p{
     font-weight: 10px;
+}
+
+.precio-con-boton {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* separa el precio del botón */
+}
+
+.precio-con-boton form {
+    position: static ;
+  
+    margin: 0;
 }
 .contenido{
     display: flex;
@@ -433,7 +442,7 @@ form button:hover {
     color: #ffffff;
     cursor: pointer;
     margin-top: 3px;
-    margin-right: 50px;
+    
 }
 
 .contenedor-cargar {
@@ -461,6 +470,7 @@ form button:hover {
     justify-content: center;
     padding: 40px;
     gap: 40px;
+    height: 56vh;
 }
 
 .nosotros-img{
@@ -475,7 +485,7 @@ form button:hover {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.nosotros-texto h2 {
+.nosotros-texto p {
     font-size: 24px;
     font-weight: 400;
     max-width: 500px;
@@ -490,31 +500,40 @@ form button:hover {
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 5%;
-    max-width: 1200px;
     margin-top: 15%;
-
+    width: 80%;
+    padding: 15px;
+    
 }
 
 .contacto-info {
     flex: 1;
-    min-width: 300px;
+   /* min-width: 300px;
     max-width: 500px;
     margin-top: 5%;
     background-color: #6495ED;
-    text-align: center;
+    text-align: center;*/
 }
-      
+
+.contacto-info form textarea{
+    width: 100%;
+    height: 100px;
+}      
 .contacto-mapa {
     flex: 1.2;                   /* le damos un poco más de espacio que al texto */
     min-width: 300px;
     max-width: 700px;            /* límite para que no se desborde en pantallas grandes */
     width: 100%;  
-    margin-left: 150px; 
+    /*margin-left: 150px;*/ 
 }
 
 .contacto-mapa iframe {
-    border: 4px solid #F08080; /* Cambia el color y el grosor como desees */
-    border-radius: 8px; /* Opcional: bordes redondeados */
+    /*border: 4px solid #F08080;*/ 
+    /*border-radius: 8px;*/ 
+    width: 100%;
+    height: 400px; 
+    box-shadow: -9px 10px 6px rgba(240, 33, 195, 0.5);
+    border: none;
 }
 
 /*.container{
@@ -546,7 +565,7 @@ form button:hover {
 }
 
 .pago-carrito {
-    flex: 2;
+    flex: 1;
     background: #2f6ada;
     color: white;
 }
@@ -555,8 +574,7 @@ form button:hover {
     display: flex;
     gap: 15px;
     margin-top: 15px;
-    height: 149px;
-    justify-content: center;
+    justify-content: flex-start;
     border-bottom: 1px solid black;
 }
 
@@ -582,7 +600,7 @@ main .contenido .pago-carrito form input{
 
 .pago-carrito form{
     position: relative;
-    width: 96%;
+  
 }
 
 .iconos-tarjeta img{
@@ -625,8 +643,8 @@ main .contenido_carrito{
     margin-top: 110px;
     padding: 50px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fafafa;
+    border-radius: 10px;
+     background: linear-gradient(to bottom right, #6495ED, #F08080);
 }
 
 .formulario-cargar h1 {
@@ -634,11 +652,27 @@ main .contenido_carrito{
     color: #333;
 }
 
+.titulo-formulario {
+    color: #3e69b9;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.link_tienda{
+    position:absolute ;
+    display: flex;
+    font-size: 1.2rem;
+    color: rgb(125, 39, 168);
+    text-decoration: none;
+    margin-left: 80%;
+    margin-top: 35px;
+}
+
 .formulario-cargar input[type="text"],
 .formulario-cargar input[type="file"],
 .formulario-cargar textarea,
 .formulario-cargar select {
-    width: 100%;
+    width: 95%;
     /*padding: 8px 12px;*/
     margin-bottom: 12px;
     border: 1px solid #aaa;
@@ -647,7 +681,7 @@ main .contenido_carrito{
 }
 
 .formulario-cargar button[type="submit"] {
-    background-color: #f08080;
+  background-color: #f79d24;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -657,8 +691,9 @@ main .contenido_carrito{
 }
 
 .formulario-cargar button[type="submit"]:hover {
-    background-color: #d96b6b;
+    background-color: #e66b06;
 }
+
 
 .formulario-cargar a {
     display: block;
@@ -668,10 +703,114 @@ main .contenido_carrito{
     text-decoration: none;
 }
 
+.mas-cont{
+    display: flex;
+    justify-content: end;
+}
+
+.lista-productos {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.item-producto {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.miniatura {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.info-producto {
+    flex-grow: 1;
+}
+
+.form-eliminar {
+    margin: 0;
+}
+
+.item-producto form{
+    display: contents;
+}
+
+.productos-existentes{
+    margin-left: 73px;
+}
+
  /*------------------------------CONTENIDO DE BASE-----------------------------------*/
 
 
 footer {
+  background-color: #f1aeee;
+  color: white;
+  padding:10px;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 119px;
+}
+
+.footer-left img{
+    width: 50px;
+}
+
+.footer-dev {
+  font-size: 17px;
+  margin-top: auto;
+  color: #000000;
+  font-weight: 600;
+  
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.footer-right img {
+  width: 28px;
+  height: 28px;
+ 
+  transition: transform 0.3s ease;
+}
+
+.footer-right img:hover {
+  transform: scale(1.1);
+} 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+/*footer {
     background-color: #F08080;
     color: white;
     text-align: center;
@@ -695,7 +834,7 @@ footer {
 
 .footer-content div {
     margin: 5px 10px;
-}
+}*/
 
 @media screen and (max-width: 600px) {
     .footer-content {
@@ -770,9 +909,10 @@ footer{
      }
      .menu-toggle {
          display: block;
-         color: white;
+         color: #000000;
          font-size: 2rem;
          cursor: pointer;
+         margin-right: 12px;
      }
      .item1{
         grid-column: 3 / span 2;
@@ -783,8 +923,8 @@ footer{
      }
 
      .item1 h1{
-        text-shadow: 2px 4px 20px #000000;
-        color: #ffffff;
+        text-shadow: 2px 4px 20px #fffdfd;
+        color: #6e0000;
      }
 
      .item1 p{
@@ -799,7 +939,7 @@ footer{
         align-items: end;
         grid-column: 5 / span 4;
         grid-row: 1 / span 1;
-        height: 90vh;
+        height: 80vh;
      }
      .item3{
         grid-column: 1 / span 4;
@@ -814,9 +954,24 @@ footer{
      .carrito-wrapper {
      flex-wrap: wrap;
 }
+     .contacto-mapa{
+        margin-top: 30px;
+     }
+     .nosotros-container{
+        display: block;
+        height: 60vh;
+     }
+     .nosotros-img{
+        width: 100%;
+     }
+     .nosotros-texto h2{ 
+        text-align: center;
+        color: #000000;
+     }
  }
  @media (min-width: 769px) {
      .menu-toggle {
          display: none;
+         margin-right: 12px;
      }
  }

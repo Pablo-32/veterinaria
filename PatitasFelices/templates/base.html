@@ -20,7 +20,7 @@
             <li><a href="{% url 'contacto' %}">Contacto</a></li>
             <li><a href="{% url 'tienda' %}">Tienda</a></li>
             {% block carrito %}
-            <li><a href="{% url 'carrito' %}"><i class="fas fa-shopping-cart"></i>Carrito <span class="cart-count">{{ productos|length }}</span></a></li>
+            <li><a href="{% url 'carrito' %}"><i class="fas fa-shopping-cart"></i>Carrito</a></li>
              {% endblock %}
         </ul>
     </nav>
@@ -29,17 +29,28 @@
         {% block content %}{% endblock %}
     </div>
     {% block footer %}
-    <footer>
-        <div class="footer-content">
-            <div>
-                <p>&copy; 2025 Patitas Felices. Todos los derechos reservados.</p>
+        <footer>
+            <div class="footer-container">
+              <div class="footer-left">
+                <img src="../static/img/patita.png" alt=""><span class="highlight-grey">Patitas <span
+                    class="highlight-pink">Felices</span></span>
+                <p class="footer-dev">Desarrollado por The Coders</p>
+              </div>
+              <div class="footer-right">
+                <a href="https://facebook.com" target="_blank">
+                  <img src="{% static 'img/facebook.svg' %}" alt="Facebook">
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                  <img src="{% static 'img/instagram.svg' %}" alt="Instagram">
+                </a>
+                <a href="https://wa.me/5491123456789" target="_blank">
+                  <img src="{% static 'img/whatsap.svg' %}" alt="WhatsApp">
+                </a>
+              </div>
             </div>
-            <div>
-                <p>Desarrollado por The coders</p>
-            </div>
-        </div>
-    </footer>
-    {% endblock %}
+        </footer>
+    
+{% endblock %}
     <script>
        function toggleMenu() {
            const menu = document.getElementById('menu');

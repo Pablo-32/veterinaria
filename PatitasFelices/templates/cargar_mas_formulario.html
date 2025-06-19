@@ -1,18 +1,47 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Cargar nuevo producto{% endblock %}
 
 {% block content %}
-<h1 >Cargar nuevo producto</h1>
 
+<div class="mas-cont">
+    <h1>Cargar nuevo producto</h1>
 <form method="post" enctype="multipart/form-data" class="formulario-cargar">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Guardar producto</button>
 </form>
+</div>
 
+<div class="productos-existentes">
+    <h1>Productos existentes</h1>
+    <ul class="lista-productos">
+        {% for producto in productos %}
+        <li class="item-producto">
+            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" class="miniatura">
+            <span class="info-producto">
+                <strong>{{ producto.nombre }}</strong> - ${{ producto.precio }}
+            </span>
+            <form method="post" action="{% url 'eliminar_producto' producto.id %}" class="form-eliminar">
+                {% csrf_token %}
+                <button type="submit">Eliminar</button>
+            </form>
+        </li>
+        {% empty %}
+        <li>No hay productos cargados.</li>
+        {% endfor %}
+    </ul>
+</div>
 <a href="{% url 'tienda' %}">Volver a la tienda</a>
-
 {% endblock %}
-
-{% block footer %}{% comment %} No mostrar footer {% endcomment %}{% endblock %}
+<footer>
+    <div class="footer-content">
+        <div>
+            <p>&copy; 2025 Patitas Felices. Todos los derechos reservados.</p>
+        </div>
+        <div>
+            <p>Desarrollado por The coders</p>
+        </div>
+    </div>
+</footer>

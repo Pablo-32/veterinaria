@@ -36,38 +36,73 @@
 
     <!-- Contenido principal -->
     <main class="container">
-        <div class="card1">
             <div class="nosotros1">
                 <div class="content1">
-                    <h2 class="cons">Consultorio</h2>
                     <img src="{% static 'img/consultorio_vet.jpg' %}" alt="Consultorio">
+                    <div class="text1">
+                        <p>Brindamos atención veterinaria profesional, cálida y comprometida. Cuidamos la salud de tu mascota con experiencia, empatía y dedicación. Desde la prevención hasta tratamientos complejos, acompañamos cada etapa de su vida. </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card1">
             <div class="nosotros1">
                 <div class="content1">
-                    <h2 class="vac">Vacunación</h2>
-                    <img src="{% static 'img/vacunacion.jpg' %}" alt="Vacunación">
+                    <div class="text1">
+                        <p>La cirugía veterinaria es un acto de cuidado y compromiso con la salud de tu mascota. Nuestro equipo realiza procedimientos con profesionalismo, tecnología moderna y cariño, garantizando seguridad y recuperación.</p>
+                    </div>
+                    <img src="{% static 'img/cirugia.jpg' %}" alt="Consultorio">
                 </div>
             </div>
-        </div>
-        <div class="card1">
+            <div class="nosotros1">
+            <div class="content1">
+                <img src="{% static 'img/peluqueria.jpg' %}" alt="Consultorio">
+                <div class="text1">
+                    <p>La peluquería veterinaria no es solo estética, es salud y bienestar. Baños, cortes y tratamientos especiales ayudan a prevenir infecciones, parásitos y problemas en la piel.</p>
+                </div>
+            </div>
+            </div>
             <div class="nosotros1">
                 <div class="content1">
-                    <h2 class="pelu">Peluquería</h2>
-                    <img src="{% static 'img/peluqueria.jpg' %}" alt="Peluquería">
+                    <div class="text1">
+                        <p>La vacunación es clave para proteger la salud de tu mascota y prevenir enfermedades graves. En nuestra veterinaria aplicamos vacunas seguras y actualizadas, adaptadas a cada etapa de su vida.</p>
+                    </div>
+                    <img src="{% static 'img/vacunacion.jpg' %}" alt="Consultorio">
                 </div>
             </div>
-        </div>
-        <div class="card1">
-            <div class="nosotros1">
-                <div class="content1">
-                    <h2 class="cir">Cirugía</h2>
-                    <img src="{% static 'img/cirugia.jpg' %}" alt="Cirugía">
-                </div>
-            </div>
-        </div>
     </main>
+    <footer>
+        <div class="footer-container">
+          <div class="footer-left">
+            <img src="../static/img/patita.png" alt=""><span class="highlight-grey">Patitas <span class="highlight-pink">Felices</span></span>
+            <p class="footer-dev">Desarrollado por The Coders</p>
+          </div>
+          <div class="footer-right">
+            <a href="https://facebook.com" target="_blank">
+              <img src="{% static 'img/facebook.svg' %}" alt="Facebook">
+            </a>
+            <a href="https://instagram.com" target="_blank">
+              <img src="{% static 'img/instagram.svg' %}" alt="Instagram">
+            </a>
+            <a href="https://wa.me/5491123456789" target="_blank">
+              <img src="{% static 'img/whatsap.svg' %}" alt="WhatsApp">
+            </a>
+          </div>
+        </div>
+    </footer>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        menu.classList.toggle('show');
+    }
+</script>
 </body>
 </html>

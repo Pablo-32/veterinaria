@@ -8,102 +8,86 @@
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
 </head>
 <body>
-    <!-- Navegación (copiado de home) -->
+    <!-- Navegación -->
     <nav>
-            <div class="logo"><img src="../static/img/patita.png" alt=""><span class="highlight-grey">Patitas <span class="highlight-pink">Felices</span></span>
-            </div>
-            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-            <ul id="menu">
-                <li><a href="{% url 'home' %}">Inicio</a></li>
-                <li><a href="{% url 'servicios' %}">Servicios</a></li>
-                <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
-                <li><a href="">Contacto</a></li>
-                <li><a href="{% url 'tienda' %}">Tienda</a></li>
-            </ul>
-        </nav>
-    
+        <div class="logo">
+            <img src="{% static 'img/patita.png' %}" alt="">
+            <span class="highlight-grey">Patitas <span class="highlight-pink">Felices</span></span>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="menu">
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'servicios' %}">Servicios</a></li>
+            <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+            <li><a href="">Contacto</a></li>
+            <li><a href="{% url 'tienda' %}">Tienda</a></li>
+        </ul>
+    </nav>
+
     <!-- Contenido de contacto -->
     <div class="contacto-container">
+        <!-- Formulario -->
         <div class="contacto-info">
             <h2>Contacto</h2>
-            <p><strong>Dirección:</strong> Av. Siempre Viva 742, Capital Federal, Buenos Aires</p>
-            <p><strong>Teléfono:</strong> +54 11 1234 5678</p>
-            <p><strong>Email:</strong> contacto@veterinaria.com</p>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br>
+
+                <button type="submit">Enviar</button>
+            </form>
         </div>
+
+        <!-- Mapa -->
         <div class="contacto-mapa">
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13131.842243511388!2d-58.451764!3d-34.603684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccad50da7c3cd%3A0x33b1cf9e29cf0571!2sCiudad%20Aut%C3%B3noma%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses!2sar!4v1717606800000!5m2!1ses!2sar" 
-                width="150%" 
+                width="350%" 
                 height="300" 
-                allowfullscreen="" 
+                allowfullscreen 
                 loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </div>
     </div>
+
+    <footer>
+            <div class="footer-container">
+              <div class="footer-left">
+                <img src="../static/img/patita.png" alt=""><span class="highlight-grey">Patitas <span
+                    class="highlight-pink">Felices</span></span>
+                <p class="footer-dev">Desarrollado por The Coders</p>
+              </div>
+              <div class="footer-right">
+                <a href="https://facebook.com" target="_blank">
+                  <img src="{% static 'img/facebook.svg' %}" alt="Facebook">
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                  <img src="{% static 'img/instagram.svg' %}" alt="Instagram">
+                </a>
+                <a href="https://wa.me/5491123456789" target="_blank">
+                  <img src="{% static 'img/whatsap.svg' %}" alt="WhatsApp">
+                </a>
+              </div>
+            </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

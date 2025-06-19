@@ -8,7 +8,8 @@ from django.contrib import messages
 from .models import Producto
 from .forms import RegistroUsuarioForm
 from .forms import ProductoForm
-
+from django.views.decorators.http import require_POST
+from django.shortcuts import get_object_or_404
 
 
 def home(request):
@@ -121,7 +122,7 @@ def agregar_al_carrito(request, producto_id):
 
 
 def carrito(request):
-    carrito = request.session.get('carrito', [])  # o como estés almacenando los productos
+    carrito = request.session.get('carrito', [])  
     productos = Producto.objects.filter(id__in=carrito)
 
     subtotal = sum(p.precio for p in productos)
@@ -145,12 +146,33 @@ def eliminar_del_carrito(request, producto_id):
     return redirect('carrito')
 
 
+#def formulario_cargar_mas(request):
+ #   if request.method == 'POST':
+  #      form = ProductoForm(request.POST, request.FILES)
+   #     if form.is_valid():
+    #        form.save()
+     #       return redirect('tienda')  # Redirige a la tienda actualizada
+   # else:
+    #    form = ProductoForm()
+    #return render(request, 'cargar_mas_formulario.html', {'form': form})
+
 def formulario_cargar_mas(request):
     if request.method == 'POST':
         form = ProductoForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('tienda')  # Redirige a la tienda actualizada
+            return redirect('formulario_cargar_mas')
     else:
         form = ProductoForm()
-    return render(request, 'cargar_mas_formulario.html', {'form': form})
+
+    productos = Producto.objects.all()  # Agregado
+    return render(request, 'cargar_mas_formulario.html', {
+        'form': form,
+        'productos': productos  # Agregado
+    })
+
+@require_POST
+def eliminar_producto(request, producto_id):
+    producto = get_object_or_404(Producto, id=producto_id)
+    producto.delete()
+    return redirect('formulario_cargar_mas')
