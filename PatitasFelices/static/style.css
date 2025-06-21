@@ -299,6 +299,11 @@ form button:hover {
 .container {
 margin-top: 170px;
 }
+
+.container h1{
+    font-size: 4rem;
+    text-align: center;
+}
 .content1{
     display: flex;
 }
@@ -903,6 +908,9 @@ footer{
          height: 100vh;
          padding: 10px
      }
+     nav ul li a{
+        color: #ffffff;
+     }
      nav ul.show {
          display: flex;
          z-index: 1000;
@@ -967,6 +975,16 @@ footer{
      .nosotros-texto h2{ 
         text-align: center;
         color: #000000;
+     }
+     .productos-existentes{
+        margin-top: 47rem;
+        margin-left: 0;
+     }
+     .productos-existentes a{
+        position: absolute;
+     }
+     .mas-cont{
+        justify-content: center;
      }
  }
  @media (min-width: 769px) {
